@@ -55,16 +55,16 @@ def decrypt(message):
             chi_test_statistic,
             message_shifted
         )
-        def sorting_key(key: int) -> tuple[float, str]:
+        def sorting_key(key: int) -> tuple[float, str]: #Get key (Don't understand this yet)
             return chi_test_statistic_values[key]
-        shift_best_key: int = min(
+        shift_best_key: int = min( #Find key of lowest test statistic value (Don't understand this yet)
             chi_test_statistic_values,
             key=sorting_key,
         )
         (
             shift_best_test_statistic,
             shift_best,
-        ) = chi_test_statistic_values[shift_best_key]
+        ) = chi_test_statistic_values[shift_best_key] #Get data of most correct shift
     print("Shift #" + str(shift_best_key) + ": " + shift_best)
 
 decrypt(input("Enter message to decrypt: ").lower())
